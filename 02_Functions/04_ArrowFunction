@@ -1,0 +1,56 @@
+const user = {
+    username: "Guru",
+    price: 999,
+    welcomeMessage: function() {
+        console.log(`${this.username}, Welcome to website`);
+        console.log(this);
+        
+    }
+}
+
+user.welcomeMessage()
+user.username="Pruthvi"
+user.welcomeMessage()
+
+// It will produce '{}' in node but in browser we get window as the answer
+console.log(this);
+
+// function chai(){
+//     let userName = "Guru"
+//     console.log(this)
+//     console.log(this.userName); // It will produce undefined
+    
+// }
+
+// chai()
+
+const chaiDeclared = function () {
+    let userName = "Guru"
+    console.log(this) // It will produced some data
+    console.log(this.userName); // It will produce undefined
+}
+
+chaiDeclared()
+
+// const chai = () => { // It is a arrow function
+//     let userName = "Guru"
+//     console.log("Arrow: ",this);// It will produced {}
+// }
+
+// chai()
+
+const addTwo = (num1, num2) => {
+    return num1+num2
+    a=20
+}
+
+console.log(addTwo(5, 2));
+
+const addTwoImplisitReturn = (num1, num2) => num1+num2
+console.log(addTwoImplisitReturn(5, 2));
+
+
+// To return object with implisit return 
+
+const objectImplisitReturn = () => ({userName: "Guru"})
+console.log(objectImplisitReturn());

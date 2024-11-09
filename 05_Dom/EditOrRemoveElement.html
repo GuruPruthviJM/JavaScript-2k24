@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li> JavaScript </li>
+    </ul>
+</body>
+<script>
+    document.title="Chai aur code | Dom"
+    document.body.style.backgroundColor = "#212121"
+    document.body.style.color="#fff"
+
+    // by using addLang it is going to traverse the complete tree to insert in the 'innerHTML'
+    // so, it is not the optimized approch
+    function addLang(langName){
+        const li=document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("Python")
+    addLang("Java")
+    // As we are using 'appendChild' so it is not necessary to traverse the tree
+    function addOptimizedLang(langName){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptimizedLang('golang')
+
+    // Edit
+
+    const secoundLang=document.querySelector("li:nth-child(2)")
+    const newLi = document.createElement('li')
+    newLi.textContent="Mojo" // It is also not the optimized approch so, use appendChild method
+    secoundLang.replaceWith(newLi)
+    console.log(secoundLang.textContent);
+    
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = "<li>TypeScript</li>" // It is not easy to write the code
+    console.log(firstLang.textContent);
+
+    // remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+    
+</script>
+</html>
