@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library="React"
+            this.server = "https://localhost:300"
+
+            // requirement
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this)) // By adding bind then the class function can access the class objects
+        }
+
+        
+        handleClick(){
+            console.log("Button Clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>

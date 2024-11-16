@@ -1,0 +1,20 @@
+function User(username, loginCount, isLoggedIn){
+    this.username=username;
+    this.loginCount=loginCount;
+    this.isLoggedIn=isLoggedIn;
+    this.greeting = ()=>{
+        console.log(`Welcome ${this.username}`);
+    }
+    return this
+}
+
+// const userOne = User("Guru", 8, true)
+// const userTwo = User("ChaiAurCode", 11, false) // It will override the userOne object
+// console.log(userOne);
+
+// If we use new Keyword then it is not going to override it is going to create the new instance for each call
+
+const userOne = new User("Guru", 8, true)
+const userTwo = new User("ChaiAurCode", 11, false)
+console.log(userOne.constructor);
+console.log(userTwo);
