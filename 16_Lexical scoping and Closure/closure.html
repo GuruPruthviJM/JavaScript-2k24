@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Clousure aur chai</title>
+</head>
+<body style="background-color: black; color: #fff;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // Lexical scoping
+    function outer(){
+        let userName = "Guru"
+        function inner(){  
+            console.log("Inner: ", userName);
+        }
+        inner()
+    }
+    outer()
+    // console.log("Outer: ", userName);
+
+    // Clousre
+
+    function makeFunc(){
+        const name="Mozilla"
+        function displayName(){
+            console.log(name);
+        }
+        return displayName;
+    }
+    const myFunc = makeFunc();
+    myFunc();
+</script>
+<script>
+    const green = document.getElementById("green");
+    const orange = document.getElementById("orange");
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor=`${color}`
+        return ()=>{
+            document.body.style.backgroundColor=`${color}`
+        }
+    }
+    orange.onclick=clickHandler("orange")
+    green.onclick=clickHandler("green")
+</script>
+</html>
