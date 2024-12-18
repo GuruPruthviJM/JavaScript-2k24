@@ -8,5 +8,5 @@ console.log(3+3);
 console.log(typeof undefined); //it's undefined
 console.log(typeof null); // It's a object
 
-let g=Number.prototype.toFixed(25.51315)
+let g=Number.prototype.toFixed.call(25.1231, 2)
 console.log(g);
