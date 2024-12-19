@@ -14,7 +14,7 @@ connectDB();
     console.log("DB connected"); 
 })();
 
-((name)=>{ // It is not named IIFE
+((name)=>{
     console.log(`${name}, Welcome`);
     
 })("Guru");
